@@ -1,7 +1,7 @@
 # coding=utf8
 
 import audiogen
-from itertools import izip_longest
+from itertools import zip_longest
 
 unit = audiogen.util.constant(1)
 
@@ -21,6 +21,5 @@ def test_mux_duplicated_content():
 		print("Channel {}: {}".format(num, ", ".join([str(c) for c in channel])))
 
 	for channel in saved:
-		for sample, test in izip_longest(channel, range(10)):
+		for sample, test in zip_longest(channel, range(10)):
 			assert(sample == test)
-
